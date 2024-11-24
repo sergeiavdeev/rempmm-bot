@@ -1,0 +1,20 @@
+version: "3.9"
+networks:
+  ttc-tops:
+    external: false
+    name: ttc-tops
+    driver: bridge
+services:
+  config-server:
+    image: sergeiavdeev/rempmm-bot
+    container_name: rempmm-bot
+    restart: always
+    environment:
+      spring.profiles.active: ${PROFILE}
+    depends_on:
+      config-server:
+        condition: service_healthy
+      eureka:
+        condition: service_started
+    networks:
+      - ttc-tops
