@@ -1,14 +1,9 @@
 version: "3.9"
 networks:
   ttc-tops:
-    external: false
+    external: true
     name: ttc-tops
     driver: bridge
-    ipam:
-      driver: default
-      config:
-        - subnet: "172.23.0.0/16"
-          gateway: "172.23.0.1"
 services:
   rempmm-bot:
     image: sergeiavdeev/rempmm-bot
