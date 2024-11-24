@@ -5,7 +5,7 @@ networks:
     name: ttc-tops
     driver: bridge
 services:
-  config-server:
+  rempmm-bot:
     image: sergeiavdeev/rempmm-bot
     container_name: rempmm-bot
     restart: always
