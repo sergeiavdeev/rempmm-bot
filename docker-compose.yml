@@ -1,4 +1,3 @@
-version: "3.9"
 networks:
   ttc-tops:
     external: true
@@ -8,7 +7,7 @@ services:
   rempmm-bot:
     image: sergeiavdeev/rempmm-bot
     container_name: rempmm-bot
-    restart: always
+    #restart: always
     environment:
       spring.profiles.active: ${PROFILE}
     networks:
