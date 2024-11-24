@@ -11,10 +11,5 @@ services:
     restart: always
     environment:
       spring.profiles.active: ${PROFILE}
-    depends_on:
-      config-server:
-        condition: service_healthy
-      eureka:
-        condition: service_started
     networks:
       - ttc-tops
