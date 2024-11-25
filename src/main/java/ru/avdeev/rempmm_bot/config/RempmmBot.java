@@ -1,6 +1,7 @@
 package ru.avdeev.rempmm_bot.config;
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.longpolling.util.LongPollingSingleThreadUpdateConsumer;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -24,10 +25,10 @@ public class RempmmBot implements LongPollingSingleThreadUpdateConsumer {
 
             switch (msg) {
                 case "/id":
-                    SendMessage(chatId, chatId.toString());
+                    sendMessage(chatId, chatId.toString());
                     break;
                 case "/hello":
-                    SendMessage(chatId, "Привет, " + update.getMessage().getChat().getFirstName());
+                    sendMessage(chatId, "Привет, " + update.getMessage().getChat().getFirstName());
                     break;
                 default:
                     break;
@@ -35,7 +36,7 @@ public class RempmmBot implements LongPollingSingleThreadUpdateConsumer {
         }
     }
 
-    public void SendMessage(Long chatId, String message) {
+    public void sendMessage(Long chatId, String message) {
 
         SendMessage msg = new SendMessage(chatId.toString(), message);
 
@@ -46,4 +47,7 @@ public class RempmmBot implements LongPollingSingleThreadUpdateConsumer {
         }
     }
 
+    public void setChatsId(Long admin, Long master) {
+
+    }
 }
