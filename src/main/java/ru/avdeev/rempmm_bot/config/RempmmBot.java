@@ -1,7 +1,6 @@
 package ru.avdeev.rempmm_bot.config;
 
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.longpolling.util.LongPollingSingleThreadUpdateConsumer;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -45,9 +44,5 @@ public class RempmmBot implements LongPollingSingleThreadUpdateConsumer {
         } catch (TelegramApiException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public void setChatsId(Long admin, Long master) {
-
     }
 }

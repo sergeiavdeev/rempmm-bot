@@ -11,9 +11,6 @@ import java.util.List;
 @Data
 public class BotProperties {
 
-    //@Value("${bot.token}")
     private String token;
-
-    //@Value("${botLocal.receivers}")
     private List<Long> receivers;
 }
